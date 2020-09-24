@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="content">
+    <a type="button" class="btn btn-success" routerLink="/empresas/form">Ingresar  Nueva Empresa</a>
+</div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Telefono</th>     
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let empresa of empresas">
+
+      <tr>
+        <th scope="row">{{empresa.id}}</th>
+        <td>{{empresa.nombre}}</td>
+        <td>{{empresa.direccion}}</td>
+        <td>{{empresa.telefono}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="borrarE(empresa.id)">Eliminar</button>
+        <button type="button" class="btn btn-dark" [routerLink]="['/empresas/edit/',empresa.id]">Actualizar</button></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+</div>
